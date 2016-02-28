@@ -1,0 +1,25 @@
+_repo: Nature-Cure-Philosophy-Practice-Based-on-the-Unity-of-Disease-Cure_4273
+alternative_title: 'Nature Cure: Philosophy and Practice Based on the Unity of Disease
+  and Cure'
+creator:
+  author:
+    agent_name: Lindlahr, Henry
+    alias: Lindlahr, H. (Henry)
+    birthdate: 1862
+    deathdate: 1924
+    gutenberg_agent_id: '1424'
+    url: http://www.gutenberg.org/2009/agents/1424
+description: ''
+gutenberg_issued: '2003-07-01'
+gutenberg_type: Text
+identifiers:
+  gutenberg: '4273'
+language: en
+publisher: Project Gutenberg
+rights: Public domain in the USA.
+rights_url: http://creativecommons.org/about/pdm
+subjects:
+- !lcsh 'Naturopathy'
+- !lcc 'RM'
+title: 'Nature Cure: Philosophy & Practice Based on the Unity of Disease & Cure'
+url: http://www.gutenberg.org/ebooks/4273

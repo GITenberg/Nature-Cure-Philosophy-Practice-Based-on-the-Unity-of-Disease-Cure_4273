@@ -1,0 +1,61 @@
+sudo: required
+dist: trusty
+language: ruby
+
+before_install:
+before_install:
+- gem install asciidoctor -v 1.5.2
+- gem install tilt
+- sudo pip install git+https://github.com/gitenberg-dev/gitberg
+- sudo pip install pillow
+- sudo pip install cssutils
+- sudo pip install docutils
+- sudo pip install roman
+- sudo pip install git+https://github.com/gitenberg-dev/pg-epubmaker
+script:
+- VERSION=`ruby -e "require 'yaml'; meta = YAML.load_file('metadata.yaml'); puts meta['_version'];"`
+- git clone https://github.com/gitenberg-dev/asciidoctor-htmlbook.git
+- sudo pip install -r asciidoctor-htmlbook/gitberg-machine/requirements.txt
+
+- /usr/bin/python -c "from gitenberg import travis; travis.build_epub()"
+- ebook-convert book.epub book.mobi
+- xvfb-run ebook-convert book.epub book.pdf
+branches:
+  only:
+  - master
+notifications:
+  webhooks:
+    urls:
+      - https://unglue.it/api/travisci/webhook
+    on_success: always
+    on_failure: never
+    on_start: never
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: YdwmmovfnQD4fo1QzQbZTgUXDS8N/c4nzytqKgoZyXItu8RhLgkiQX/iI4ijjDUrqP0blstD22amOSnxM8KgwtQ9hYAgtabcp46qIBm2tE61llRZr2WIJ07kP7MgtHahL3mkgTwTEY6mepq0PLt4f7FColIRx5u7xJ7Xd5pNVrMTvEInWxIJhyEDro5DhBBLIzNhoooK9yHa/6mWaqjCPptKp3YEjjojj/0sBCcT/vEeNGA2wIPU7upGMQ4Y78cwdhV4UhVtZmkQglgzJN27o15nV0CbVwMG+ur9Efiba2yRZsce2auATMwKC8mAECR5/EOWL3gL6yEj5JLscSYS/fh6dQ1z/8P2lB9hiPI81VFkLRG1mZv+86h7lmm4YxxlH8i4J67+msn9fScriE6LPCcjUA9vZNKqJitVManIg+hn3RL5gz5KGE6ytemrkzoWq/oaRDrCid1JCp8+maw9wXoPj1g4gtCawP0qZYn0gMLdmoxFym8xxg3/WeSTD4MevrWjsWs10dp5l5euXzDf1kATLo8R8/2pLtimwPecTW4joJEsqmqUygoFUvXZVU+6LfC/57nxZW2ZALa63NANW7+L/1WUZ67METbnInT25aSmBxeCeURlZPYOD/L2Z1FnBVCJMz+7z2TEQ9sF4rQq8qqNEP5IbRx2iuztLnbqQVQ=
+  file:
+    - book.epub
+    - book.mobi
+    - book.pdf
+  "on":
+    repo: GITenberg/Nature-Cure-Philosophy-Practice-Based-on-the-Unity-of-Disease-Cure_4273
+addons:
+  apt:
+    packages:
+    - xsltproc
+    - xvfb
+    - calibre
+    - python-pip
+    - git
+    - python-dev
+    - libjpeg-dev
+    - libpng-dev
+    - libfreetype6
+    - libfreetype6-dev
+    - zlib1g-dev
+    - python-lxml
+    - libxml2-dev
+    - libxslt1-dev
+    - tidy

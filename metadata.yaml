@@ -1,7 +1,10 @@
 _repo: Nature-Cure-Philosophy-Practice-Based-on-the-Unity-of-Disease-Cure_4273
-_version: 0.1.0
+_version: 0.2.0
 alternative_title: 'Nature Cure: Philosophy and Practice Based on the Unity of Disease
   and Cure'
+covers:
+- cover_type: generated
+  image_path: cover.png
 creator:
   author:
     agent_name: Lindlahr, Henry
@@ -11,6 +14,8 @@ creator:
     gutenberg_agent_id: '1424'
     url: http://www.gutenberg.org/2009/agents/1424
 description: ''
+edition_identifiers:
+  edition_id: http://www.gutenberg.org/ebooks/4273#Nature-Cure-Philosophy-Practice-Based-on-the-Unity-of-Disease-Cure
 gutenberg_issued: '2003-07-01'
 gutenberg_type: Text
 identifiers:

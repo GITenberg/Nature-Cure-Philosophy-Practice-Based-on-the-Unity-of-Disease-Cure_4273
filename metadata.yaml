@@ -1,5 +1,5 @@
 _repo: Nature-Cure-Philosophy-Practice-Based-on-the-Unity-of-Disease-Cure_4273
-_version: 0.2.0
+_version: 0.2.1
 alternative_title: 'Nature Cure: Philosophy and Practice Based on the Unity of Disease
   and Cure'
 covers:
@@ -27,5 +27,6 @@ rights_url: http://creativecommons.org/about/pdm
 subjects:
 - !lcsh 'Naturopathy'
 - !lcc 'RM'
+- GITenberg
 title: 'Nature Cure: Philosophy & Practice Based on the Unity of Disease & Cure'
 url: http://www.gutenberg.org/ebooks/4273
